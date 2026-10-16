@@ -1,10 +1,13 @@
 # Breaking Bad Cast
 
 A character browser for *Breaking Bad* and *Better Call Saul*, built on the
-public [breakingbadapi](https://breakingbadapi.com). Search the roster and flip
+public breakingbadapi.com. Search the roster and flip
 a card to read the details.
 
 **[Live demo →](https://breakingbadchars.vercel.app/)**
+
+> **The API is gone.** breakingbadapi.com no longer resolves, so the live demo
+> loads but cannot fetch any characters. The code below is unchanged.
 
 ## Features
 
@@ -22,7 +25,7 @@ a card to read the details.
 | Framework | React 18 (Create React App) |
 | HTTP | axios |
 | Styling | plain CSS (`transform-style: preserve-3d` for the flip) |
-| Data | [breakingbadapi](https://breakingbadapi.com) |
+| Data | breakingbadapi.com (offline) |
 
 ## How it works
 
