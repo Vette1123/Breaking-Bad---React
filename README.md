@@ -12,7 +12,7 @@ a card to read the details.
 ## Features
 
 - Grid of character cards, portrait on the front
-- **Flip on hover** — a CSS 3D transform turns the card to reveal its back
+- **Flip on hover**: a CSS 3D transform turns the card to reveal its back
 - Card back lists actor, nickname, birthday, status and how many seasons the
   character appears in
 - Search by name, served by the API's own `?name=` filter
@@ -46,18 +46,18 @@ useEffect(() => {
 }, [query])
 ```
 
-`CharacterItem` is presentational — a `card-front` holding the image and a
-`card-back` holding the list, rotated into view by CSS alone with no state
-tracking which side is showing.
+`CharacterItem` is presentational. A `card-front` holds the image and a
+`card-back` holds the list. CSS rotates the back into view, and no state
+tracks which side is showing.
 
 ## Known limitations
 
-Worth being explicit about, since this was an early learning project:
+This was an early learning project, so these are left as they are:
 
 - **Search fires a request per keystroke.** The effect is keyed on `query` and
   the input updates it on every change, so typing "walter" issues six requests.
-  Debouncing, or fetching the cast once and filtering in memory, would fix it —
-  the dataset is small enough that either works.
+  Debouncing, or fetching the cast once and filtering in memory, would fix it.
+  The dataset is small enough that either works.
 - **No cancellation.** Responses can land out of order, so a slow early request
   can overwrite a fast later one. An `AbortController` in the effect's cleanup
   is the standard fix.
@@ -65,12 +65,11 @@ Worth being explicit about, since this was an early learning project:
   spinner up indefinitely, and there is no empty state for a search that
   matches nothing.
 - **The flip is hover-only.** `.card:hover .card-inner` has no touch or focus
-  equivalent, so on a phone — where most of the traffic to a demo like this
-  actually lands — the entire back of the card is unreachable. Adding
+  equivalent, so on a phone the entire back of the card is unreachable. Adding
   `:focus-within` and a tap-to-toggle class would fix both that and keyboard
   access.
-- **Occupation is commented out** in `CharacterItem` — the API returns it as an
-  array and rendering it was left unfinished.
+- **Occupation is commented out** in `CharacterItem`. The API returns it as an
+  array, and rendering it was left unfinished.
 
 ## Running locally
 
